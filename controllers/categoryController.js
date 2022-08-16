@@ -1,19 +1,21 @@
 const categoryModel = require("./modles/categoryModel");
+const slugify = require("slugify");
 
 const getCategories = (req, res) => {
-  const name = req.body.name;
-  console.log(req.body);
+  res.send();
 };
 
-const newCategory = new categoryModel({ name });
+exports.createCategory = (req, res) => {
+  const name = req.body.name;
 
-newCategory
-  .save()
-  .then((doc) => {
-    res.jsong(doc);
-  })
-  .catch((err) => {
-    res.json({ err });
+  CategoryModel.create({ name, slug: slugify(name) }).then((category) => {
+    res
+      .status(201)
+      .json({ data: category })
+      .catch((err) => {
+        res.status(400).send(err);
+      });
   });
+};
 
 module.exporst = getCategories;

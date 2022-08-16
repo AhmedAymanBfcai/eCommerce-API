@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8000;
 const dbConnection = require("./config/db");
 dbConnection();
 
-const categoryRoute = require("./routes/categoryRoute");
+// const categoryRoute = require("routes/categoryRoute");
 
 app.use(express.json());
 

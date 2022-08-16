@@ -2,12 +2,15 @@ const express = require("express");
 
 const router = express.Router();
 
-const { getCategories } = require("./controllers/categoryController");
+const {
+  getCategories,
+  createCategory,
+} = require("./controllers/categoryController");
 
 app.get("/", (req, res) => {
   res.send("Hi :)");
 });
 
-router.get("/", getCategories);
+router.route("/").get(getCategories).post(createCategory);
 
 module.exports = router;

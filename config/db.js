@@ -6,7 +6,7 @@ const dbConnection = () => {
       "mongodb+srv://ahmed123:123ahmed@ahmedaymanbfcai.7prin.mongodb.net/suqshop?retryWrites=true&w=majority"
     )
     .then((conn) => {
-      console.log(`Database Connected: ${conn.connection.host}`);
+      console.log(`Database Connected successfully :) `);
     });
   // .catch((err) => {
   //   console.error(`Database Error: ${err}`);
